@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import SessionProvider from '@/app/components/SessionProvider'
+import RecoilRoot from './components/RecoilRoot'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +22,9 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider session={session}>
-          {children}
+          <RecoilRoot>
+            {children}
+          </RecoilRoot>
         </SessionProvider>
       </body>
     </html>
