@@ -5,7 +5,9 @@ export interface user {
 }
 
 export interface post {
+    _id: string
     user: user
     description: string
-    image?: Blob
+    createdAt: string
+
 }
