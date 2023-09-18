@@ -3,22 +3,21 @@ import mongoose, { Document, InferSchemaType } from "mongoose";
 import { Schema } from "mongoose";
 
 const postSchema = new Schema({
-    user: [
-        {
-            email: {
-                type: String,
-                required: true,
-            },
-            name: {
-                type: String,
-                required: true
-            },
-            image: {
-                type: String,
-                required: true
-            }
+    user:
+    {
+        email: {
+            type: String,
+            required: true,
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
         }
-    ],
+    },
     description: {
         type: String,
         required: true,
@@ -29,8 +28,11 @@ const postSchema = new Schema({
 export type Post = Document & InferSchemaType<typeof postSchema>
 const PostModal = mongoose.model('Post', postSchema)
 
-export const createPost = async (user: user, description: string) => {
-    const post = new PostModal({ user: user, description: description })
+export const createPost = async (User: user, description: string) => {
+    const post = new PostModal({
+        user: { email: User.email, name: User.name, image: User.image },
+        description: description
+    })
     await post.save()
     return post
 }
