@@ -1,11 +1,12 @@
 import Image from "next/image";
-import HomePage from "../components/HomePage";
-import { getServerSession } from 'next-auth'
-import Create from "../components/Create";
+import CreatePost from "../components/CreatePost";
+import { getServerSession } from "next-auth";
+
 export default async function Home() {
-  const session = await getServerSession()
-  return (<>
-    <HomePage />
-    <Create />
-  </>)
+  const session = await getServerSession();
+  return (
+    <div className="">
+      <CreatePost />
+    </div>
+  );
 }
