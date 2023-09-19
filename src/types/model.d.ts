@@ -11,3 +11,11 @@ export interface post {
     createdAt: string
 
 }
+
+export interface commentType {
+    _id: string;
+    user: user;
+    post_id: string;
+    description: string;
+    createdAt: string
+}
