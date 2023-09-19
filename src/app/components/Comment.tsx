@@ -18,12 +18,9 @@ export default function Comment({ comment }: { comment: commentType }) {
       </div>
       <div className="flex flex-col flex-1  p-2">
         <div className="flex items-center justify-between w-full">
-          <Link
-            href={`/${comment.user.name}`}
-            className="font-bold hover:underline"
-          >
+          <div className="font-bold hover:underline cursor-pointer">
             {comment.user.name}
-          </Link>
+          </div>
           <div className="flex items-center">
             <p className="font-light mr-2">
               {moment(comment.createdAt).fromNow(true)}

@@ -36,7 +36,7 @@ export default function Topbar() {
             </Link>
           </li>
           <li className="topbar-icon">
-            <Link href={"/"}>
+            <Link href={"/profile"}>
               <AiOutlineUser />
             </Link>
           </li>

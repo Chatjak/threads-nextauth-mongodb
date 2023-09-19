@@ -96,12 +96,7 @@ export default function Post({
       </div>
       <div className="flex flex-col flex-1  p-2">
         <div className="flex items-center justify-between w-full">
-          <Link
-            href={`/${post.user.name}`}
-            className="font-bold hover:underline"
-          >
-            {post.user.name}
-          </Link>
+          <div className="font-bold hover:underline cursor-pointer">{post.user.name}</div>
           <div className="flex items-center">
             <p className="font-light mr-2">
               {moment(post.createdAt).fromNow(true)}
